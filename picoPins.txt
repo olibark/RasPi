@@ -1,0 +1,47 @@
+Raspberry Pi Pico Pinout Cheat Sheet
+=====================================
+
++-----+------------+-----------------+-----+
+| PIN | GPIO       | Function        | ADC |
++-----+------------+-----------------+-----+
+|  1  | GP0        | UART0 TX        |     |
+|  2  | GP1        | UART0 RX        |     |
+|  3  | GND        | Ground          |     |
+|  4  | GP2        | I2C1 SDA        |     |
+|  5  | GP3        | I2C1 SCL        |     |
+|  6  | GND        | Ground          |     |
+|  7  | GP4        | SPI0 RX         |     |
+|  8  | GP5        | SPI0 CSn        |     |
+|  9  | GND        | Ground          |     |
+| 10  | GP6        | SPI0 SCK        |     |
+| 11  | GP7        | SPI0 TX         |     |
+| 12  | GND        | Ground          |     |
+| 13  | GP8        | I2C0 SDA        |     |
+| 14  | GP9        | I2C0 SCL        |     |
+| 15  | GND        | Ground          |     |
+| 16  | GP10       | UART1 TX        |     |
+| 17  | GP11       | UART1 RX        |     |
+| 18  | GND        | Ground          |     |
+| 19  | GP12       | PWM             |     |
+| 20  | GP13       | PWM             |     |
+| 21  | GND        | Ground          |     |
+| 22  | GP14       | PWM             |     |
+| 23  | GP15       | PWM (buzzer pin)|     |
+| 24  | GND        | Ground          |     |
+| 25  | GP16       | ADC0            | ✔   |
+| 26  | GP17       | ADC1            | ✔   |
+| 27  | GND        | Ground          |     |
+| 28  | GP18       | ADC2            | ✔   |
+| 29  | GP19       | PWM             |     |
+| 30  | GND        | Ground          |     |
+| 31  | GP20       | PWM             |     |
+| 32  | GP21       | PWM             |     |
+| 33  | GND        | Ground          |     |
+| 34  | GP22       | PWM             |     |
+| 35  | RUN        | Reset Input     |     |
+| 36  | GP26/ADC0  | ADC0            | ✔   |
+| 37  | GP27/ADC1  | ADC1            | ✔   |
+| 38  | GP28/ADC2  | ADC2            | ✔   |
+| 39  | GND        | Ground          |     |
+| 40  | 3V3        | 3.3V Power Out  |     |
++-----+------------+-----------------+-----+

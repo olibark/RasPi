@@ -2,6 +2,17 @@ from machine import Pin, PWM
 import time
 
 led = Pin("LED", Pin.OUT)
+buzz = PWM(Pin(15))
+buzz.freq(500)  # Set buzzer tone frequency
+
+def beep(duration):
+    led.on()
+    buzz.duty_u16(30000)
+    time.sleep(duration)
+    buzz.duty_u16(0)
+    led.off()
+    time.sleep(0.2)  # Gap between beeps
+
 
 characters = {
     'A': '.-', 'B': '-...', 'C': '-.-.', 'D': '-..', 'E': '.',
@@ -12,10 +23,10 @@ characters = {
     'Z': '--..'
 }
 
-long = 0.3
-short = 0.1
+long = 0.4
+short = 0.2
 
-string = "hello"
+string = "hello dad miss you"
 string = string.upper()
 
 morse = []
@@ -29,14 +40,8 @@ print("Morse Code:", morseCode)
 
 for i in range(len(morseCode)):
     if morseCode[i] == '.':
-        led.on()
-        time.sleep(short)
-        led.off()
-        time.sleep(short)
+        beep(short)
     elif morseCode[i] == '-':
-        led.on()
-        time.sleep(long)
-        led.off()
-        time.sleep(short)
+        beep(long)
     elif morseCode[i] == ' ':
         time.sleep(long)
