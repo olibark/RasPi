@@ -3,7 +3,7 @@ import time
 
 led = Pin("LED", Pin.OUT)
 buzz = PWM(Pin(15))
-buzz.freq(500)  # Set buzzer tone frequency
+buzz.freq(600)  # Set buzzer tone frequency
 
 def beep(duration):
     led.on()
@@ -23,8 +23,8 @@ characters = {
     'Z': '--..'
 }
 
-long = 0.4
-short = 0.2
+long = 0.05
+short = 0.025
 
 string = "hello dad miss you"
 string = string.upper()

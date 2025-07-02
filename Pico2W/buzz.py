@@ -1,57 +1,25 @@
 from machine import Pin, PWM
 import time
 
-# Onboard LED
-led = Pin("LED", Pin.OUT)
-
-# Buzzer on GP15 (you can change this if needed)
+# Set up PWM on GPIO15 (Pin 20)
 buzzer = PWM(Pin(15))
-buzzer.freq(1000)  # Set buzzer tone frequency
+buzzer.duty_u16(0)  # Ensure buzzer is off initiall
+buzzer.duty_u16(30000)  # Turn buzzer on at medium volume
 
-# Morse code dictionary
-characters = {
-    'A': '.-', 'B': '-...', 'C': '-.-.', 'D': '-..', 'E': '.',
-    'F': '..-.', 'G': '--.', 'H': '....', 'I': '..', 'J': '.---',
-    'K': '-.-', 'L': '.-..', 'M': '--', 'N': '-.', 'O': '---',
-    'P': '.--.', 'Q': '--.-', 'R': '.-.', 'S': '...', 'T': '-',
-    'U': '..-', 'V': '...-', 'W': '.--', 'X': '-..-', 'Y': '-.--',
-    'Z': '--..'
-}
+# Frequency range (Hz)
+min_freq = 500
+max_freq = 2000
+step = 10       # Frequency step size
+delay = 0.01    # Delay between steps (smoother = smaller)
 
-# Timing (seconds)
-long = 0.4      # Dash
-short = 0.2     # Dot
-gap = 0.2       # Gap between parts of a letter
+for freq in range(min_freq, max_freq, step):
+    # Sweep up
+    for freq in range(min_freq, max_freq, step):
+        buzzer.freq(freq)
+        time.sleep(delay)
 
-# Text to translate
-string = "hello dad miss you"
-string = string.upper()
-
-# Convert to Morse code
-morse = []
-for char in string:
-    if char in characters:
-        morse.append(characters[char])
-    elif char == ' ':
-        morse.append('')  # word space
-
-morseCode = ' '.join(morse)
-print("Morse Code:", morseCode)
-
-# Beep function (LED + buzzer)
-def beep(duration):
-    led.on()
-    buzzer.duty_u16(30000)  # Turn buzzer on
-    time.sleep(duration)
-    buzzer.duty_u16(0)      # Turn buzzer off
-    led.off()
-    time.sleep(gap)         # Space between parts
-
-# Play Morse Code
-for symbol in morseCode:
-    if symbol == '.':
-        beep(short)
-    elif symbol == '-':
-        beep(long)
-    elif symbol == ' ':
-        time.sleep(long)  # Space between letters
+    # Sweep down
+    for freq in range(max_freq, min_freq, -step):
+        buzzer.freq(freq)
+        time.sleep(delay)
+buzzer.duty_u16(0)  # Turn buzzer off
