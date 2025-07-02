@@ -19,6 +19,7 @@ string = "hello"
 string = string.upper()
 
 morse = []
+
 for i in range(len(string)):
     if string[i] in characters:
         morse.append(characters[string[i]])
