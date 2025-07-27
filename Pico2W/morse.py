@@ -26,7 +26,7 @@ characters = {
 long = 0.05
 short = 0.025
 
-string = "hello dad miss you"
+string = "Hi"
 string = string.upper()
 
 morse = []
