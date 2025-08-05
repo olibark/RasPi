@@ -23,10 +23,10 @@ characters = {
     'Z': '--..'
 }
 
-long = 0.05
+long = 0.1
 short = 0.025
 
-string = "hello dad miss you"
+string = input()
 string = string.upper()
 
 morse = []
