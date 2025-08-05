@@ -26,7 +26,9 @@ characters = {
 long = 0.1
 short = 0.025
 
-string = input()
+
+
+string = "Hi"
 string = string.upper()
 
 morse = []
