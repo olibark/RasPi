@@ -28,8 +28,7 @@ short = 0.025
 
 
 
-string = "Hi"
-string = string.upper()
+string = "Hello oliver".upper()
 
 morse = []
 
