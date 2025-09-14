@@ -43,3 +43,5 @@ for i in range(len(morseCode)):
         beep(long)
     elif morseCode[i] == ' ':
         time.sleep(long)
+        
+led.off()
