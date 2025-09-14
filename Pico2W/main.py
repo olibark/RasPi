@@ -13,7 +13,6 @@ def beep(duration):
     led.off()
     time.sleep(0.2)  # Gap between beeps
 
-
 characters = {
     'A': '.-', 'B': '-...', 'C': '-.-.', 'D': '-..', 'E': '.',
     'F': '..-.', 'G': '--.', 'H': '....', 'I': '..', 'J': '.---',
@@ -25,8 +24,6 @@ characters = {
 
 long = 0.1
 short = 0.025
-
-
 
 string = "Hello oliver".upper()
 
