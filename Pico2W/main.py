@@ -45,3 +45,5 @@ for i in range(len(morseCode)):
         time.sleep(long)
         
 led.off()
+
+exit()
